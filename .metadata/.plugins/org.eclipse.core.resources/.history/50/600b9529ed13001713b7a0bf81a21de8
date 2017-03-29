@@ -1,0 +1,69 @@
+package br.cesed.si.p3.ed.warray;
+
+import static org.junit.Assert.*;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+public class TestWarray {
+
+	/**
+	 * Comments for this test
+	 */
+	@Test
+	public void testInitialList() {
+
+		Warray w = new Warray(1);
+		Assert.assertEquals(w.size(), 0);
+	}
+
+	/**
+	 * Comments for this test
+	 */
+	@Test
+	public void testAdd1() {
+
+		try {
+			Warray w = new Warray(3);
+			w.adiciona("Element 1");
+			w.adiciona("element 2");
+			Assert.assertEquals(w.size(), 1);
+			
+		} catch (InvalidValueException e) {
+			e.printStackTrace();
+		} catch (ArrayIndexOutOfBoundsException e){
+			e.printStackTrace();
+		}
+	}
+
+	@Test
+	public void testRemove() {
+
+		try {
+			Warray w = new Warray(10);
+			w.adiciona("Element 1");
+			w.adiciona("element 2");
+			w.adiciona("element 3");
+			w.remove("Element 3");
+			Assert.assertEquals(w.size(), 0);
+			
+		} catch (InvalidValueException e) {
+			e.printStackTrace();
+		} catch (ArrayIndexOutOfBoundsException e){
+			e.printStackTrace();
+		}
+	}
+
+	
+	/**
+	 * Comments for this test
+	 * @throws InvalidValueException 
+	 */
+	@Test(expected=InvalidValueException.class)
+	public void testAdd2() throws InvalidValueException {
+
+		Warray w = new Warray(1);
+		w.adiciona(null);
+	}
+
+}

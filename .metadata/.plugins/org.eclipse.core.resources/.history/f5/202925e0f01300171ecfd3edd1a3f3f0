@@ -1,0 +1,10 @@
+package br.cesed.si.p3.ed.warray;
+
+public class InvalidIndexException extends Exception {
+
+	public InvalidIndexException(String arg0) {
+		super(arg0);
+		// TODO Auto-generated constructor stub
+	}
+
+}

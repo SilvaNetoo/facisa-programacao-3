@@ -24,16 +24,54 @@ public class TestWarray {
 	public void testAdd1() {
 
 		try {
-
-			Warray w = new Warray(1);
-			w.add("Element 1");
-			Assert.assertEquals(w.size(), 1);
-
+			Warray w = new Warray(3);
+			w.adiciona("Element 1");
+			w.adiciona("element 2");
+			w.adiciona("element 3");
+			Assert.assertEquals(w.size(), 3);
+			
 		} catch (InvalidValueException e) {
 			e.printStackTrace();
 		}
 	}
 
+	@Test
+	public void testRemove() {
+
+		try {
+			Warray w = new Warray(3);
+			w.adiciona("Element 1");
+			w.adiciona("Element 2");
+			w.remove("Element 1");
+			Assert.assertEquals(w.size(), 1);
+			
+		} catch (InvalidValueException e) {
+			e.printStackTrace();
+		} catch (InvalidIndexException e){
+			e.printStackTrace();
+		} catch (ValueNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@Test
+	public void testRemovePosicao() {
+
+		try {
+			Warray w = new Warray(3);
+			w.adiciona("Element 1");
+			w.adiciona("Element 2");
+			w.removePosicao(1);
+			Assert.assertEquals(w.size(), 1);
+			
+		} catch (InvalidValueException e) {
+			e.printStackTrace();
+		} catch (InvalidIndexException e){
+			e.printStackTrace();
+		}
+	}
+
+	
 	/**
 	 * Comments for this test
 	 * @throws InvalidValueException 
@@ -42,7 +80,7 @@ public class TestWarray {
 	public void testAdd2() throws InvalidValueException {
 
 		Warray w = new Warray(1);
-		w.add(null);
+		w.adiciona(null);
 	}
 
 }
