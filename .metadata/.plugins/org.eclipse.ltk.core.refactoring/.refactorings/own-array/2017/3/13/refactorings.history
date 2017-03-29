@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;br.cesed.si.p3.ed.warray.Warray&apos; to &apos;SArray&apos;&#x0D;&#x0A;- Original project: &apos;own-array&apos;&#x0D;&#x0A;- Original element: &apos;br.cesed.si.p3.ed.warray.Warray&apos;&#x0D;&#x0A;- Renamed element: &apos;br.cesed.si.p3.ed.warray.SArray&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Warray&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;br.cesed.si.p3.ed.warray{Warray.java[Warray" matchStrategy="1" name="SArray" qualified="false" references="true" similarDeclarations="false" stamp="1490747649552" textual="false" version="1.0"/>
+</session>

@@ -13,7 +13,7 @@ public class TestWarray {
 	@Test
 	public void testInitialList() {
 
-		SArray w = new SArray(1);
+		Warray w = new Warray(1);
 		Assert.assertEquals(w.size(), 0);
 	}
 
@@ -24,7 +24,7 @@ public class TestWarray {
 	public void testAdd1() {
 
 		try {
-			SArray w = new SArray(3);
+			Warray w = new Warray(3);
 			w.adiciona("Element 1");
 			w.adiciona("element 2");
 			w.adiciona("element 3");
@@ -39,7 +39,7 @@ public class TestWarray {
 	public void testRemove() {
 
 		try {
-			SArray w = new SArray(3);
+			Warray w = new Warray(3);
 			w.adiciona("Element 1");
 			w.adiciona("Element 2");
 			w.remove("Element 1");
@@ -58,7 +58,7 @@ public class TestWarray {
 	public void testRemovePosicao() {
 
 		try {
-			SArray w = new SArray(3);
+			Warray w = new Warray(3);
 			w.adiciona("Element 1");
 			w.adiciona("Element 2");
 			w.removePosicao(1);
@@ -79,7 +79,7 @@ public class TestWarray {
 	@Test(expected=InvalidValueException.class)
 	public void testAdd2() throws InvalidValueException {
 
-		SArray w = new SArray(1);
+		Warray w = new Warray(1);
 		w.adiciona(null);
 	}
 

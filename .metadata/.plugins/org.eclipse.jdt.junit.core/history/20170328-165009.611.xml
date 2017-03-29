@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="TestWarray" project="own-array" tests="3" started="3" failures="0" errors="0" ignored="0">
-  <testsuite name="br.cesed.si.p3.ed.warray.TestWarray" time="0.004">
-    <testcase name="testAdd1" classname="br.cesed.si.p3.ed.warray.TestWarray" time="0.003"/>
-    <testcase name="testAdd2" classname="br.cesed.si.p3.ed.warray.TestWarray" time="0.0"/>
-    <testcase name="testInitialList" classname="br.cesed.si.p3.ed.warray.TestWarray" time="0.0"/>
-  </testsuite>
-</testrun>
