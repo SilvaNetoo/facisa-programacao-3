@@ -1,5 +1,5 @@
 package br.cesed.si.p3.ed.warray;
-
+import java.util.ArrayList;
 /**
  * Class that represents my own array.
  * 
@@ -12,7 +12,6 @@ package br.cesed.si.p3.ed.warray;
  */
 public class SArray {
 
-	
 	/*
 	 * Crie exceções para InvalidIndexException
 	 * Aplicar InvalidValueException nos outros métodos
@@ -21,7 +20,7 @@ public class SArray {
 	private Object[] elementos;
 	private static final int DOBRO = 2;
 	private static final int SIZEUPS = 18;
-	
+
 	/**
 	 * Constructor for my own array.
 	 * 
@@ -30,7 +29,7 @@ public class SArray {
 	public SArray(int tamanho) {
 		elementos = new Object[tamanho];
 	}
-	
+
 	/**
 	 * Add an element for my array 
 	 * 
@@ -46,9 +45,9 @@ public class SArray {
 				aumentaCapacidade();
 			}
 			elementos[pos++] = o;
-		}		
+		}  
 	}
-	
+
 	private void aumentaCapacidade(){
 		Object[] copiaElementos = new Object[(this.pos * DOBRO) + SIZEUPS];
 		for(int i = 0; i <= elementos.length;i++){
@@ -56,7 +55,7 @@ public class SArray {
 		}
 		elementos = copiaElementos;
 	}
-	
+
 	/**
 	 * Remove an element for my array 
 	 * 
@@ -67,7 +66,7 @@ public class SArray {
 	 */
 	public void remove(Object o) throws InvalidValueException, InvalidIndexException, ValueNotFoundException {
 		int posicao = 0;
-		
+
 		if(o == null){
 			throw new InvalidValueException();
 		}else{
@@ -79,9 +78,9 @@ public class SArray {
 				}
 			}
 		}
-		
+
 	}
-	
+
 	/**
 	 * Remove an element for my array by index
 	 * 
@@ -93,15 +92,15 @@ public class SArray {
 		if(!(index >= 0 && index < size())){
 			throw new InvalidIndexException();
 		}
-		
+
 		if(elementos[index] != null){
 			elementos[index] = null;
 		} else {
 			throw new InvalidValueException();
 		}
-		
+
 	}
-	
+
 	/**
 	 * Size of array
 	 * 
@@ -116,30 +115,47 @@ public class SArray {
 		}
 		return cont;
 	}
-	
+
 	/**
 	 * Convert my own array to native array
 	 * 
 	 * @return the converted native array
 	 */
 	public Object[] toArray() {
-		return null;
+		return elementos;
 	}
-	
+
 	/**
 	 * Prints all the elements
 	 */
-	public void listar() {
-		//TODO imprimir todos os elementos da lista
+	public ArrayList listar() {
+		ArrayList copia = new ArrayList<>();
+		for (Object object : elementos) {
+			if(object != null){
+				copia.add(object);
+			}
+		}
+		return copia;
 	}
-	
+
 	/**
 	 * Get the element by index 
 	 * @param index index of element 
 	 * @return searched element
+	 * @throws InvalidIndexException 
 	 */
-	public Object get(int index) {
-		return null;
+	public Object get(int index) throws InvalidIndexException {
+		ArrayList copia = new ArrayList<Object>();
+		if(!(index > 0 && index < elementos.length)){
+			throw new InvalidIndexException();
+		} else {
+			for (Object object : elementos) {
+				if(object != null){
+					copia.add(object);
+				}
+			}
+		}
+		return copia;
 	}
-	
+
 }
